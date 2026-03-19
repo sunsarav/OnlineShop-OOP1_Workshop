@@ -9,9 +9,8 @@ public class Order {
     private Customer customer;
     private List<Product> products;
 
-    public Order(int id, double totalPrice,List<Product> products) {
+    public Order(int id) {
         this.id = id;
-        this.totalPrice = totalPrice;
         this.products = new ArrayList<>();
     }
 
@@ -27,21 +26,43 @@ public class Order {
         this.id = id;
     }
 
-    public void setTotalPrice(double totalPrice) {
-        this.totalPrice = totalPrice;
+    //Method to connect a Customer to an Order
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
+    //Method to Add Products to the Order
+    public void addProduct(Product product) {
+        products.add(product);
+    }
+    //Method to Calculate Total Price - Main Logic
+    public double calculateTotalPrice() {
+        double total = 0;
+
+        for (Product product : products) {
+            total += product.getProductPrice();
+        }
+        return total;
+    }
+    //Method to update TotalPrice
+    public void updateTotalPrice() {
+        this.totalPrice = calculateTotalPrice();
+    }
+    //Method to Print Order details
+    public void printOrderDetails() {
+        if (customer != null) {
+            System.out.println("Customer Name : " + customer.getCustomerName());
+            System.out.println("Email-Id : " + customer.getCustomerEmail());
+        }
+        System.out.println();
+        System.out.println("Products Ordered");
+        System.out.println();
+
+        for (Product product : products) {
+            System.out.println(product.getProductId() + " - " + product.getProductName() + " costs "
+                    + product.getProductPrice());
+        }
+        System.out.printf("Total costs for Ordered Items : %.2f SEK%n", calculateTotalPrice());
+        System.out.println();
     }
 
-//Methods
-public void setCustomer(Customer customer) {
-    this.customer = customer;
-}
-public void addProduct(Product product) {
-    products.add(product);
-}
-public void calculateTotalPrice() {
-    double total = 0;
-    for (Product product : products) {
-        total = product.
-    }
-}
 }
