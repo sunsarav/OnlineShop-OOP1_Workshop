@@ -44,16 +44,16 @@ public class Main {
         order4.addProduct(product8);
 
         // Print all orders
-        order1.printOrderDetails();
+        order1.printOrderSummary();
         System.out.println("----------------");
 
-        order2.printOrderDetails();
+        order2.printOrderSummary();
         System.out.println("----------------");
 
-        order3.printOrderDetails();
+        order3.printOrderSummary();
         System.out.println("----------------");
 
-        order4.printOrderDetails();
+        order4.printOrderSummary();
     }
 
 

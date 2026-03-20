@@ -50,8 +50,8 @@ public class Order {
     public void updateTotalPrice() {
         this.totalPrice = calculateTotalPrice();
     }
-    //Method to Print Order details
-    public void printOrderDetails() {
+    //Method to Print Order summary
+    public void printOrderSummary() {
         if (customer != null) {
             System.out.println("Customer Name : " + customer.getCustomerName());
             System.out.println("Email-Id : " + customer.getCustomerEmail());
@@ -64,6 +64,7 @@ public class Order {
             System.out.println(product.getProductId() + " - " + product.getProductName() + " costs "
                     + product.getProductPrice());
         }
+        System.out.println("Total Products: " + products.size());
         System.out.printf("Total costs for Ordered Items : %.2f SEK%n", calculateTotalPrice());
         System.out.println();
     }

@@ -7,8 +7,8 @@ public class Product {
 
     public Product(int productId, String productName, double productPrice) {
         this.productId = productId;
-        this.productName = productName;
-        this.productPrice = productPrice;
+        setProductName(productName);
+        setProductPrice(productPrice);
     }
 
     public int getProductId() {
@@ -35,6 +35,9 @@ public class Product {
     }
 
     public void setProductPrice(double productPrice) {
+        if (productPrice <= 0) {
+            throw new IllegalArgumentException("Price must be positive");
+        }
         this.productPrice = productPrice;
     }
 }
