@@ -1,4 +1,4 @@
-## Online Shop ##
+# Online Shop #
 
 ##### Here comes output of the project #####
 ## 🖥️ Output
